@@ -1,9 +1,12 @@
+// Force dynamic rendering for this page
+export const dynamic = "force-dynamic"
+
 import type { Metadata } from "next"
 import { DashboardStats } from "@/components/admin/dashboard-stats"
 import { RecentActivity } from "@/components/admin/recent-activity"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, AudioWaveformIcon as Waveform, Cpu, Settings } from "lucide-react"
+import { ArrowRight, Users, AudioWaveform as Waveform, Cpu, Settings } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -68,7 +71,7 @@ export default function AdminOverviewPage() {
 
                 <div className="mt-6">
                   <Link href="/admin/settings" className="block">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full bg-transparent">
                       <Settings className="mr-2 h-4 w-4" />
                       System Settings
                       <ArrowRight className="ml-auto h-4 w-4" />

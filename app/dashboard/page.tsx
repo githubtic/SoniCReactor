@@ -5,6 +5,9 @@ import EventMatcher from "@/components/event-matcher"
 import DeviceConnector from "@/components/device-connector"
 import PatternDetector from "@/components/pattern-detector"
 
+// Force dynamic rendering for this page
+export const dynamic = "force-dynamic"
+
 export default function DashboardPage() {
   return (
     <div className="flex min-h-screen w-full flex-col">

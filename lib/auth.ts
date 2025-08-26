@@ -1,12 +1,18 @@
 import { createServerSupabaseClient } from "@/lib/supabase/server"
 
 export async function getCurrentUser() {
-  const supabase = createServerSupabaseClient()
-
   try {
+    const supabase = createServerSupabaseClient()
+
     const {
       data: { user },
+      error: authError,
     } = await supabase.auth.getUser()
+
+    if (authError) {
+      console.error("Auth error:", authError)
+      return null
+    }
 
     if (!user) {
       return null
